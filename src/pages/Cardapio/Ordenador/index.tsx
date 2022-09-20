@@ -1,12 +1,14 @@
 import styles from './Ordenador.module.scss';
-import opcoes from './opcoes.json';
-import React, { useState } from 'react';
+import opcoes from './opcoes';
+import { Dispatch, SetStateAction, useState } from 'react';
 import classNames from 'classnames';
 import { MdKeyboardArrowDown, MdKeyboardArrowUp } from 'react-icons/md';
 
+export type OpcoesOrdenador = '' | 'porcao' | 'qtd_pessoas' | 'preco';
+
 interface Props {
-  ordenador: string;
-  setOrdenador: React.Dispatch<React.SetStateAction<string>>;
+  ordenador: OpcoesOrdenador;
+  setOrdenador: Dispatch<SetStateAction<OpcoesOrdenador>>;
 }
 
 export default function Ordenador({ ordenador, setOrdenador }: Props) {
